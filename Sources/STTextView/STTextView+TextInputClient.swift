@@ -17,7 +17,7 @@ extension STTextView: NSTextInputClient {
         NSCursor.setHiddenUntilMouseMoves(true)
 
         // ^Space -> complete:
-        if event.modifierFlags.contains(.control) && event.charactersIgnoringModifiers == " " {
+        if event.modifierFlags.contains(.shift) && event.charactersIgnoringModifiers == " " {
             doCommand(by: #selector(NSStandardKeyBindingResponding.complete(_:)))
             return
         }
